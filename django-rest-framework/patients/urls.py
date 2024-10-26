@@ -1,9 +1,9 @@
 from django.urls import path
-from patients.views import list_patients, create_patients, detail_patient
+from patients.views import   detail_patient, ListPatientsView
+
 
 
 urlpatterns = [
-    path('patients/', list_patients),
-    path('create-patients/', create_patients),
+    path('patients/', ListPatientsView.as_view()),
     path('patients/<int:pk>', detail_patient),
 ]
