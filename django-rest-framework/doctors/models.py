@@ -13,12 +13,12 @@ class Doctor(models.Model):
     biography = models.TextField()
 
 class Department(models.Model):
-    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     description = models.TextField()
 
 class DoctorAvailability(models.Model):
-    id = models.AutoField(primary_key=True)
+    doctor = models.ForeignKey(
+        Doctor, related_name='availability', on_delete=models.CASCADE)
     start_date = models.DateField()
     end_date = models.DateField()
     start_time = models.TimeField()
@@ -27,6 +27,7 @@ class DoctorAvailability(models.Model):
 
 
 class MedicalNote(models.Model):
-    id = models.AutoField(primary_key=True)
+    doctor = models.ForeignKey(
+        Doctor, related_name='medical_notes', on_delete=models.CASCADE)
     note = models.TextField()
     date = models.DateField()
