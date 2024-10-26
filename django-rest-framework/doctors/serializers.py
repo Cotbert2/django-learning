@@ -7,7 +7,6 @@ class DoctorSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-
 class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Department,
@@ -18,6 +17,7 @@ class DoctorAvailabilitySerializer(serializers.ModelSerializer):
     class Meta:
         model = DoctorAvailability,
         fields = '__all__'
+
 
 class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
